@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+WTForms/DatePicker
+{% endblock %}
+
+
+{% block content %}
+
+<h3>Select a date range</h3>
+<form action="" method="POST" name="myform">
+    {{ form.csrt_token }}
+    {{ form.startdate.label}} {{form.startdate(class="datepicker")}} {{form.hidden_tag()}}
+    {{ form.enddate.label}} {{form.enddate(class="datepicker")}} {{form.hidden_tag()}}
+    <p>
+        {{form.submit()}}
+    </p>
+
+
+</form>
+
+
+
+{% endblock %}
