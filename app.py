@@ -3,7 +3,9 @@ from flask_wtf import FlaskForm
 from wtforms.fields.html5 import DateField
 from wtforms.validators import DataRequired
 from wtforms import validators, SubmitField
+from datetime import datetime
 from models import db, Todo
+from flask_datepicker import datepicker
 
 # Flask
 app = Flask(__name__)
@@ -34,6 +36,8 @@ def index():
 @app.route('/date', methods=['GET', 'POST'])
 def date():
     startdate = session['startdate']
+    print(startdate)
+
     enddate = session['enddate']
     return render_template('date.html')
 
